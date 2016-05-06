@@ -1,6 +1,6 @@
 # crowdware
 
-This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
+This application was built by JHipster tools & frameworks, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
 ## Development
 

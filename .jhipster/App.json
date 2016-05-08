@@ -1,0 +1,36 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "user_app",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "apps"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "3",
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160508184636",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "app",
+    "pagination": "pager"
+}

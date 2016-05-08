@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span>Payment</span> {{vm.payment.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span>Amount</span></dt>
+        <dd>
+            <span>{{vm.payment.amount}}</span>
+        </dd>
+        <hr>
+        <dt><span>Time</span></dt>
+        <dd>
+            <span>{{vm.payment.time | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span>Job</span></dt>
+        <dd>
+            <a ui-sref="job-detail({id:vm.payment.job.id})">{{vm.payment.job.id}}</a>
+        </dd>
+        <hr>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.payment.user.id}}
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

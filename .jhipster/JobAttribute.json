@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "job",
+            "otherEntityName": "job",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160508191808",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "job_attribute",
+    "pagination": "no"
+}

@@ -1,0 +1,32 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "job",
+            "otherEntityName": "job",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160508192140",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "payment",
+    "pagination": "no"
+}

@@ -3,11 +3,11 @@
 
     angular
         .module('crowdwareApp')
-        .controller('AppController', AppController);
+        .controller('CrowdAppController', CrowdAppController);
 
-    AppController.$inject = ['$scope', '$state', 'App', 'AppSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    CrowdAppController.$inject = ['$scope', '$state', 'DataUtils', 'CrowdApp', 'CrowdAppSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
 
-    function AppController ($scope, $state, App, AppSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function CrowdAppController ($scope, $state, DataUtils, CrowdApp, CrowdAppSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
         var vm = this;
         vm.loadAll = loadAll;
         vm.loadPage = loadPage;
@@ -18,18 +18,20 @@
         vm.search = search;
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
+        vm.openFile = DataUtils.openFile;
+        vm.byteSize = DataUtils.byteSize;
         vm.loadAll();
 
         function loadAll () {
             if (pagingParams.search) {
-                AppSearch.query({
+                CrowdAppSearch.query({
                     query: pagingParams.search,
                     page: pagingParams.page - 1,
                     size: paginationConstants.itemsPerPage,
                     sort: sort()
                 }, onSuccess, onError);
             } else {
-                App.query({
+                CrowdApp.query({
                     page: pagingParams.page - 1,
                     size: paginationConstants.itemsPerPage,
                     sort: sort()
@@ -46,7 +48,7 @@
                 vm.links = ParseLinks.parse(headers('link'));
                 vm.totalItems = headers('X-Total-Count');
                 vm.queryCount = vm.totalItems;
-                vm.apps = data;
+                vm.crowdApps = data;
                 vm.page = pagingParams.page;
             }
             function onError(error) {

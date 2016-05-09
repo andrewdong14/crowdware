@@ -3,12 +3,12 @@
 
     angular
         .module('crowdwareApp')
-        .factory('AppSearch', AppSearch);
+        .factory('CrowdAppSearch', CrowdAppSearch);
 
-    AppSearch.$inject = ['$resource'];
+    CrowdAppSearch.$inject = ['$resource'];
 
-    function AppSearch($resource) {
-        var resourceUrl =  'api/_search/apps/:id';
+    function CrowdAppSearch($resource) {
+        var resourceUrl =  'api/_search/crowd-apps/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true}

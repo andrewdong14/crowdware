@@ -9,17 +9,17 @@
 
     function stateConfig($stateProvider) {
         $stateProvider
-        .state('app', {
+        .state('crowd-app', {
             parent: 'entity',
-            url: '/app?page&sort&search',
+            url: '/crowd-app?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Apps'
+                pageTitle: 'CrowdApps'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/app/apps.html',
-                    controller: 'AppController',
+                    templateUrl: 'app/entities/crowd-app/crowd-apps.html',
+                    controller: 'CrowdAppController',
                     controllerAs: 'vm'
                 }
             },
@@ -46,36 +46,36 @@
                 }]
             }
         })
-        .state('app-detail', {
+        .state('crowd-app-detail', {
             parent: 'entity',
-            url: '/app/{id}',
+            url: '/crowd-app/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'App'
+                pageTitle: 'CrowdApp'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/app/app-detail.html',
-                    controller: 'AppDetailController',
+                    templateUrl: 'app/entities/crowd-app/crowd-app-detail.html',
+                    controller: 'CrowdAppDetailController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
-                entity: ['$stateParams', 'App', function($stateParams, App) {
-                    return App.get({id : $stateParams.id});
+                entity: ['$stateParams', 'CrowdApp', function($stateParams, CrowdApp) {
+                    return CrowdApp.get({id : $stateParams.id});
                 }]
             }
         })
-        .state('app.new', {
-            parent: 'app',
+        .state('crowd-app.new', {
+            parent: 'crowd-app',
             url: '/new',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/app/app-dialog.html',
-                    controller: 'AppDialogController',
+                    templateUrl: 'app/entities/crowd-app/crowd-app-dialog.html',
+                    controller: 'CrowdAppDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
                     size: 'lg',
@@ -83,63 +83,63 @@
                         entity: function () {
                             return {
                                 name: null,
-                                source: null,
                                 version: null,
+                                source: null,
                                 id: null
                             };
                         }
                     }
                 }).result.then(function() {
-                    $state.go('app', null, { reload: true });
+                    $state.go('crowd-app', null, { reload: true });
                 }, function() {
-                    $state.go('app');
+                    $state.go('crowd-app');
                 });
             }]
         })
-        .state('app.edit', {
-            parent: 'app',
+        .state('crowd-app.edit', {
+            parent: 'crowd-app',
             url: '/{id}/edit',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/app/app-dialog.html',
-                    controller: 'AppDialogController',
+                    templateUrl: 'app/entities/crowd-app/crowd-app-dialog.html',
+                    controller: 'CrowdAppDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
-                        entity: ['App', function(App) {
-                            return App.get({id : $stateParams.id});
+                        entity: ['CrowdApp', function(CrowdApp) {
+                            return CrowdApp.get({id : $stateParams.id});
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('app', null, { reload: true });
+                    $state.go('crowd-app', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });
             }]
         })
-        .state('app.delete', {
-            parent: 'app',
+        .state('crowd-app.delete', {
+            parent: 'crowd-app',
             url: '/{id}/delete',
             data: {
                 authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
-                    templateUrl: 'app/entities/app/app-delete-dialog.html',
-                    controller: 'AppDeleteController',
+                    templateUrl: 'app/entities/crowd-app/crowd-app-delete-dialog.html',
+                    controller: 'CrowdAppDeleteController',
                     controllerAs: 'vm',
                     size: 'md',
                     resolve: {
-                        entity: ['App', function(App) {
-                            return App.get({id : $stateParams.id});
+                        entity: ['CrowdApp', function(CrowdApp) {
+                            return CrowdApp.get({id : $stateParams.id});
                         }]
                     }
                 }).result.then(function() {
-                    $state.go('app', null, { reload: true });
+                    $state.go('crowd-app', null, { reload: true });
                 }, function() {
                     $state.go('^');
                 });

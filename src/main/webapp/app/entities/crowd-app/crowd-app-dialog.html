@@ -4,19 +4,19 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myAppLabel">Create or edit a App</h4>
+        <h4 class="modal-title" id="myCrowdAppLabel">Create or edit a Crowd App</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.app.id">
+        <div class="form-group" ng-show="vm.crowdApp.id">
             <label for="id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.app.id" readonly />
+                    ng-model="vm.crowdApp.id" readonly />
         </div>
         <div class="form-group">
             <label class="control-label" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
-                    ng-model="vm.app.name"
+                    ng-model="vm.crowdApp.name"
                     required ng-minlength="3" ng-maxlength="50" />
             <div ng-show="editForm.name.$invalid">
                 <p class="help-block"
@@ -34,21 +34,20 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_source">Source</label>
-            <input type="text" class="form-control" name="source" id="field_source"
-                    ng-model="vm.app.source"
+            <label class="control-label" for="field_version">Version</label>
+            <input type="number" class="form-control" name="version" id="field_version"
+                    ng-model="vm.crowdApp.version"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_version">Version</label>
-            <input type="number" class="form-control" name="version" id="field_version"
-                    ng-model="vm.app.version"
-                     />
+            <label class="control-label" for="field_source">Source</label>
+                <textarea class="form-control" name="source" id="field_source"
+                    ng-model="vm.crowdApp.source"  />
         </div>
 
         <div class="form-group">
-            <label translate="crowdwareApp.app.user_app" for="field_user_app">User App</label>
-            <select class="form-control" id="field_user_app" name="user_app" ng-model="vm.app.user_app" ng-options="user as user.apps for user in vm.users track by user.id">
+            <label for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.crowdApp.user" ng-options="user as user.crowdApps for user in vm.users track by user.id">
                 <option value=""></option>
             </select>
         </div>

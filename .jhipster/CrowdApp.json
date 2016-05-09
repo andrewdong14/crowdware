@@ -1,10 +1,10 @@
 {
     "relationships": [
         {
-            "relationshipName": "user_app",
+            "relationshipName": "user",
             "otherEntityName": "user",
             "relationshipType": "many-to-one",
-            "otherEntityField": "apps"
+            "otherEntityField": "crowdApps"
         }
     ],
     "fields": [
@@ -20,17 +20,18 @@
             "fieldValidateRulesMaxlength": "50"
         },
         {
-            "fieldName": "source",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "version",
             "fieldType": "Integer"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
         }
     ],
     "changelogDate": "20160508184636",
     "dto": "no",
     "service": "serviceClass",
-    "entityTableName": "app",
+    "entityTableName": "crowdApp",
     "pagination": "pager"
 }

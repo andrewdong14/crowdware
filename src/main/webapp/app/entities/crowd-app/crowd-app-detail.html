@@ -1,26 +1,26 @@
 
 <div>
-    <h2><span>App</span> {{vm.app.id}}</h2>
+    <h2><span>Crowd App</span> {{vm.crowdApp.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
         <dt><span>Name</span></dt>
         <dd>
-            <span>{{vm.app.name}}</span>
-        </dd>
-        <hr>
-        <dt><span>Source</span></dt>
-        <dd>
-            <span>{{vm.app.source}}</span>
+            <span>{{vm.crowdApp.name}}</span>
         </dd>
         <hr>
         <dt><span>Version</span></dt>
         <dd>
-            <span>{{vm.app.version}}</span>
+            <span>{{vm.crowdApp.version}}</span>
         </dd>
         <hr>
-        <dt><span translate="crowdwareApp.app.user_app">User App</span></dt>
+        <dt><span>Source</span></dt>
         <dd>
-            {{vm.app.user_app.apps}}
+            <span>{{vm.crowdApp.source}}</span>
+        </dd>
+        <hr>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.crowdApp.user.crowdApps}}
         </dd>
         <hr>
     </dl>

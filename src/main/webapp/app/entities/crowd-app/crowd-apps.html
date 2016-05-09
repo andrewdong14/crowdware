@@ -1,13 +1,13 @@
 <div>
-    <h2>Apps</h2>
+    <h2>Crowd Apps</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="app.new" >
+                <button class="btn btn-primary" ui-sref="crowd-app.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span class="hidden-xs" >
-                        Create new App
+                        Create new Crowd App
                     </span>
                 </button>
             </div>
@@ -37,37 +37,37 @@
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="source"><span>Source</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="version"><span>Version</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="user_app.apps"><span translate="crowdwareApp.app.user_app">User App</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="source"><span>Source</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.crowdApps"><span>User</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="app in vm.apps track by app.id">
-                    <td><a ui-sref="app-detail({id:app.id})">{{app.id}}</a></td>
-                    <td>{{app.name}}</td>
-                    <td>{{app.source}}</td>
-                    <td>{{app.version}}</td>
+                <tr ng-repeat="crowdApp in vm.crowdApps track by crowdApp.id">
+                    <td><a ui-sref="crowd-app-detail({id:crowdApp.id})">{{crowdApp.id}}</a></td>
+                    <td>{{crowdApp.name}}</td>
+                    <td>{{crowdApp.version}}</td>
+                    <td>{{crowdApp.source}}</td>
                     <td>
-                        {{app.user_app.apps}}
+                        {{crowdApp.user.crowdApps}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="app-detail({id:app.id})"
+                                    ui-sref="crowd-app-detail({id:crowdApp.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="app.edit({id:app.id})"
+                                    ui-sref="crowd-app.edit({id:crowdApp.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-xs hidden-sm"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="app.delete({id:app.id})"
+                                    ui-sref="crowd-app.delete({id:crowdApp.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm"></span>

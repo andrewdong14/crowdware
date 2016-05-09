@@ -2,12 +2,12 @@
     'use strict';
     angular
         .module('crowdwareApp')
-        .factory('App', App);
+        .factory('CrowdApp', CrowdApp);
 
-    App.$inject = ['$resource'];
+    CrowdApp.$inject = ['$resource'];
 
-    function App ($resource) {
-        var resourceUrl =  'api/apps/:id';
+    function CrowdApp ($resource) {
+        var resourceUrl =  'api/crowd-apps/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},

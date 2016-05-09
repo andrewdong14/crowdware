@@ -3,18 +3,18 @@
 
     angular
         .module('crowdwareApp')
-        .controller('AppDeleteController',AppDeleteController);
+        .controller('CrowdAppDeleteController',CrowdAppDeleteController);
 
-    AppDeleteController.$inject = ['$uibModalInstance', 'entity', 'App'];
+    CrowdAppDeleteController.$inject = ['$uibModalInstance', 'entity', 'CrowdApp'];
 
-    function AppDeleteController($uibModalInstance, entity, App) {
+    function CrowdAppDeleteController($uibModalInstance, entity, CrowdApp) {
         var vm = this;
-        vm.app = entity;
+        vm.crowdApp = entity;
         vm.clear = function() {
             $uibModalInstance.dismiss('cancel');
         };
         vm.confirmDelete = function (id) {
-            App.delete({id: id},
+            CrowdApp.delete({id: id},
                 function () {
                     $uibModalInstance.close(true);
                 });

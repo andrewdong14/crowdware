@@ -9,10 +9,12 @@
     <include file="classpath:config/liquibase/changelog/20160508191614_added_entity_Job.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160508191808_added_entity_JobAttribute.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160508192140_added_entity_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170113092932_added_entity_Task.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20160508184636_added_entity_constraints_CrowdApp.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160508191614_added_entity_constraints_Job.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160508191808_added_entity_constraints_JobAttribute.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160508192140_added_entity_constraints_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170113092932_added_entity_constraints_Task.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
